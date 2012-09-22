@@ -1,0 +1,30 @@
+{
+  "name": "cryptonite",
+  "version": "0.0.1",
+  "description": "Web App for managing and sharing password and other sensitive securely",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thomasfr/cryptonite.git"
+  },
+  "keywords": [
+    "rsa",
+    "aes",
+    "des",
+    "password"
+  ],
+  "author": "Thomas Fritz",
+  "license": "BSD",
+  "dependencies": {
+    "redis": "~0.8.1",
+    "ursa": "~0.7.0",
+    "express": "~3.0.0rc4",
+    "engine.io": "~0.2.2"
+  }
+}
