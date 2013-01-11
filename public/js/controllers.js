@@ -1,61 +1,40 @@
-var module = angular.module('App.controllers', []);
+(function () {
 
-module.controller('ListCtrl', function ($scope, Passwords) {
+	var module = angular.module('App.Controllers', ['App.Services']);
 
-	$scope.passwords = Passwords.getAll();
+	var ListCtrl = function ($scope, Passwords) {
 
-	$scope.remove = function () {
-		console.log(arguments);
-		Passwords.remove($scope.password);
-		$location.path('/');
-	}
+		$scope.passwords = Passwords.getAll();
 
-});
-
-module.controller('NewCtrl', function ($scope, $location, Passwords) {
-
-	$scope.save = function () {
-		Passwords.add($scope.password);
-		$location.path('/');
-	}
-
-});
-
-module.controller('EditCtrl', function ($scope, $location, $routeParams, Passwords) {
-	$scope.password = Passwords.get($routeParams.passwordId);
-	$scope.save = function () {
-		Passwords.save($scope.password);
-		$location.path('/');
-	}
-});
-
-module.factory('Passwords', function () {
-	var passwords = [
-		{
-			"id": 0,
-			"name": "Website",
-			"password": "abcdefgh",
-			"description": "abcdefgh",
-			"creator": "abcdefgh"
+		$scope.remove = function () {
+			console.log(arguments);
+			Passwords.remove($scope.password);
+			$location.path('/');
 		}
-	];
 
-	return {
-		get: function (id) {
-			return passwords[id];
-		},
-		getAll: function () {
-			return passwords;
-		},
-		add: function (password) {
-			password.id = passwords.length;
-			passwords.push(password);
-		},
-		save: function (password) {
-			password[password.id] = password;
-		},
-		remove: function (password) {
-			delete passwords[password.id];
+	};
+	ListCtrl.$inject = ['$scope', 'Passwords'];
+	module.controller('ListCtrl', ListCtrl);
+
+	var NewCtrl = function ($scope, $location, Passwords) {
+
+		$scope.save = function () {
+			Passwords.add($scope.password);
+			$location.path('/');
 		}
-	}
-});
+
+	};
+	NewCtrl.$inject = ['$scope', '$location', 'Passwords'];
+	module.controller('NewCtrl', NewCtrl);
+
+	var EditCtrl = function ($scope, $location, $routeParams, Passwords) {
+		$scope.password = Passwords.get($routeParams.passwordId);
+		$scope.save = function () {
+			Passwords.save($scope.password);
+			$location.path('/');
+		}
+	};
+	EditCtrl.$inject = ['$scope', '$location', '$routeParams', 'Passwords'];
+	module.controller('EditCtrl', EditCtrl);
+
+}());
