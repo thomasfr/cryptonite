@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" ng-app="App">
+<head>
+	<title>Cryptonite</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="navbar navbar-fixed-top navbar-inverse">
+	<div class="navbar-inner">
+		<div class="container-fluid">
+			<a class="brand" href="/" title="Secure and convenient password management">Cryptonite</a>
+		</div>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="span3 c-sidebar">
+			<ul class="nav nav-tabs nav-stacked affix-top c-sidenav">
+				<li class="active"><a href="/">My Passwords</a>
+			</ul>
+		</div>
+		<div class="span9 c-content">
+			<section id="passwords" ng-controller="ListCtrl">
+				<h2>{{passwords.length}} Passwords</h2>
+
+				<div ng-view></div>
+
+			</section>
+		</div>
+	</div>
+</div>
+<script src="/js/libs/jquery.min.js"></script>
+<script src="/js/libs/angular.min.js"></script>
+<script src="/js/libs/bootstrap.min.js"></script>
+<script src="/js/services.js"></script>
+<script src="/js/controllers.js"></script>
+<script src="/js/app.js"></script>
+
+</body>
+</html>
