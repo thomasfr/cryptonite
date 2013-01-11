@@ -1,0 +1,18 @@
+extends layout
+
+block body
+	div(ng-app="App")
+		div.span3.c-sidebar
+			ul.nav.nav-tabs.nav-stacked.affix-top.c-sidenav
+				li
+					a(href="/") My Passwords
+		div.span9.c-content
+			section#passwords(ng-controller="ListCtrl")
+				h2 {{passwords.length}} Passwords
+				div(ng-view)
+	script(src="/js/libs/jquery.min.js")
+	script(src="/js/libs/angular.min.js")
+	script(src="/js/libs/bootstrap.min.js")
+	script(src="/js/services.js")
+	script(src="/js/controllers.js")
+	script(src="/js/app.js")

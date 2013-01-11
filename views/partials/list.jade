@@ -1,0 +1,29 @@
+div.navbar
+	div.navbar-inner
+		ul.nav
+			li
+				a(href="/new") Add Password
+		form.navbar-search.pull-left
+			input.search-query(type="text", placeholder="Search", ng-model="search")
+
+table.table.table-bordered.table-hover.table-striped(ng-model="ListCtrl")
+	thead
+		tr
+			th Name
+			th Creator
+			th Password
+			th Description
+			th
+				a(href="/new")
+					i.icon-plus-sign(title="New password")
+		tbody
+			tr(ng-repeat="password in passwords | filter:search")
+				td {{password.name}}
+				td {{password.creator}}
+				td {{password.password}}
+				td {{password.description}}
+				td
+					a(href="/edit/{{password.id}}", title="Edit")
+						i.icon-edit
+					a(href="", ng-click="remove()", title="Delete")
+						i.icon-remove

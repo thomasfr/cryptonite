@@ -1,0 +1,20 @@
+form.form-horizontal
+	fieldset
+		legend New Password
+		div.control-group
+			label.control-label(for="inputTitle") Title
+			div.controls
+				input#inputTitle(type="text", name="name", ng-model="password.name", placeholder="Name...")
+		div.control-group
+			label.control-label(for="inputPassword") Password
+			div.controls
+				input#inputPassword(type="password", name="password", ng-model="password.password",
+				placeholder="Password...")
+		div.control-group
+			label.control-label(for="inputDescription") Description
+			div.controls
+				textarea#inputDescription(name="description", ng-model="password.description",
+				placeholder="Description...")
+		div.control-group
+			div.controls
+				button(type="submit", class="btn", ng-click="save()") Save

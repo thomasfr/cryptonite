@@ -1,0 +1,19 @@
+extends layout
+
+block body
+	div.span12
+		form.form-horizontal(method="POST", action="/login")
+			fieldset
+				legend Login
+				div.control-group
+					label.control-label(for="inputEmail") Email
+					div.controls
+						input#inputEmail(type="text", placeholder="Email", name="email")
+				div.control-group
+					label.control-label(for="inputPassword") Password
+					div.controls
+						input#inputPassword(type="password", placeholder="Password", name="password")
+				div.control-group
+					div.controls
+						button.btn(type="submit") Login
+
