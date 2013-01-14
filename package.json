@@ -27,9 +27,6 @@
     "express": "*",
     "spdy": "*",
     "connect-redis": "*",
-    "consolidate": "*",
-    "hogan.js": "*",
-    "websocket.io": "*",
     "jade": "~0.28.1"
   }
 }

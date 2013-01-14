@@ -2,11 +2,3 @@ body {
   position:relative;
   padding-top:60px;
 }
-
-.c-sidenav {
-  width: 220px;
-}
-
-.c-sidenav.affix {
-  top:70px;
-}
